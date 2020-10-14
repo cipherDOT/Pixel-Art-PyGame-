@@ -12,7 +12,7 @@ pygame.display.set_caption('Pixel Art')
 line_x = width // 28
 line_y = height // 28
 
-def get_mouse_pos():
+def get_rect_pos():
     x = pygame.mouse.get_pos()[0]
     y = pygame.mouse.get_pos()[1]
     return (x - (x % rez), y - (y % rez), rez, rez)
@@ -25,7 +25,7 @@ def main():
                 run = False
 
             if pygame.mouse.get_pressed()[0]:
-                pygame.draw.rect(display, (255, 255, 255), get_mouse_pos())
+                pygame.draw.rect(display, (255, 255, 255), get_rect_pos())
                 # print(get_mouse_pos())
 
             for i in range(1, int(width / rez)):
